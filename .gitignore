@@ -1,0 +1,12 @@
+/node_modules
+/target
+/public/js
+.shadow-cljs
+.nrepl-port
+yarn.lock
+package-lock.json
+.vscode/
+/src/breaking_bad_quotes/fb/init.cljs
+.firebaserc
+firebase.json
+.firebase
