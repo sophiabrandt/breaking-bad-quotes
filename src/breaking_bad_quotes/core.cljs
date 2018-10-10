@@ -17,7 +17,7 @@
         [:div.cards>div.card
          [:h2.card-header.text-center "Breaking Bad Quotes"]
          [:div.card-body.text-center
-          [:p#quote quote]
+          [:p#quote (or quote "Loading... please wait")]
           [:p#author author]]
          [:div.card-footer.center.text-center
           [:button#twitter.outline>a#tweet
