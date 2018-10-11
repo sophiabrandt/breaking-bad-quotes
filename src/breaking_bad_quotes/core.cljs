@@ -7,8 +7,7 @@
   (GET "https://breaking-bad-quotes.herokuapp.com/v1/quotes"
     {:handler #(reset! link %)
      :error-handler (fn [{:keys [status status-text]}]
-                        (js/console.log status status-text)
-                        (#(reset! link [{"quote" "Sorry, something went wrong."}])))}))
+                      (js/console.log status status-text))}))
 
 (defn quote []
   (let [link (atom nil)]
