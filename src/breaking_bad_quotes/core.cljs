@@ -3,17 +3,17 @@
             [ajax.core :refer [GET]]
             [breaking-bad-quotes.fb.init :refer [firebase-init]]))
 
-(defn fetch-link! [link]
+(defn fetch-link! [data]
   (GET "https://breaking-bad-quotes.herokuapp.com/v1/quotes"
-    {:handler #(reset! link %)
+    {:handler #(reset! data %)
      :error-handler (fn [{:keys [status status-text]}]
                       (js/console.log status status-text))}))
 
 (defn quote []
-  (let [link (atom nil)]
-    (fetch-link! link)
+  (let [data (atom nil)]
+    (fetch-link! data)
     (fn []
-      (let [{:strs [quote author]} (first @link)
+      (let [{:strs [quote author]} (first @data)
             tweet-intent (str "https://twitter.com/intent/tweet?hashtags=breakingbad&text=" quote " ~ " author)]
         [:div.cards>div.card
          [:h2.card-header.text-center "Breaking Bad Quotes"]
@@ -26,9 +26,8 @@
             :target "_blank"}
            [:i.fi-social-twitter " Tweet"]]
           [:button#new-quote.outline
-           {:on-click #(fetch-link! link)}
+           {:on-click #(fetch-link! data)}
            [:i.fi-shuffle " New Quote"]]]]))))
-
 
 (defn start []
   (r/render-component [quote]
