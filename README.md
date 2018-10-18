@@ -42,6 +42,13 @@ It is inspired by the [FreeCodeCamp Project: Build a Random Quote Machine](https
 - [Web Development with Clojure, 2nd Edition](https://pragprog.com/book/dswdcloj2/web-development-with-clojure-second-edition) by Dmitri Sotnikov
 - [Learn Reagent](https://www.learnreagent.com/) by Jacek Schae
 
+## Tutorials
+
+I wrote about how to build this app on my blog in two posts:
+
+- [Tutorial: Clojurescript App With Reagent For Beginners, Part 1](https://www.rockyourcode.com/tutorial-clojurescript-app-with-reagent-for-beginners-part-1) (local development of the app)
+- [Tutorial: Clojurescript App With Reagent For Beginners, Part 2](https://www.rockyourcode.com/tutorial-clojurescript-app-with-reagent-for-beginners-part-2) (deployment to Firebase)
+
 ## Licence
 
 > MIT License
